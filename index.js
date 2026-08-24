@@ -1,6 +1,16 @@
-/* =========================================
-   PAGE NAVIGATION
-========================================= */
+/* =========================================================
+   MONSTER GYM — MANAGEMENT SYSTEM
+   JavaScript
+   ========================================================= */
+
+/* =========================================================
+   MONSTER GYM MANAGEMENT SYSTEM
+========================================================= */
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
 
 const navItems =
     document.querySelectorAll(".nav-item");
@@ -14,8 +24,69 @@ const pageTitle =
 const pageSubtitle =
     document.getElementById("pageSubtitle");
 
+const mobileMenu =
+    document.getElementById("mobileMenu");
 
-const pageData = {
+const sidebar =
+    document.getElementById("sidebar");
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+const settingsTheme =
+    document.getElementById("settingsTheme");
+
+const notificationBtn =
+    document.getElementById("notificationBtn");
+
+const notificationPanel =
+    document.getElementById("notificationPanel");
+
+const addMemberBtn =
+    document.getElementById("addMemberBtn");
+
+const membersAddBtn =
+    document.getElementById("membersAddBtn");
+
+const memberModal =
+    document.getElementById("memberModal");
+
+const closeModal =
+    document.getElementById("closeModal");
+
+const memberForm =
+    document.getElementById("memberForm");
+
+const membersTable =
+    document.getElementById("membersTable");
+
+const allMembersTable =
+    document.getElementById("allMembersTable");
+
+const totalMembers =
+    document.getElementById("totalMembers");
+
+const memberSearch =
+    document.getElementById("memberSearch");
+
+const membershipFilter =
+    document.getElementById("membershipFilter");
+
+const toast =
+    document.getElementById("toast");
+
+const toastMessage =
+    document.getElementById("toastMessage");
+
+const liveDate =
+    document.getElementById("liveDate");
+
+
+/* =========================================================
+   PAGE INFORMATION
+========================================================= */
+
+const pageInfo = {
 
     dashboard: {
         title: "Dashboard",
@@ -29,57 +100,44 @@ const pageData = {
 
     trainers: {
         title: "Trainers",
-        subtitle: "Manage your gym trainers"
+        subtitle: "Manage your professional training team"
     },
 
     memberships: {
         title: "Memberships",
-        subtitle: "Manage membership plans"
+        subtitle: "Manage membership plans and pricing"
     },
 
     attendance: {
         title: "Attendance",
-        subtitle: "Track today's attendance"
+        subtitle: "Monitor today's gym attendance"
     },
 
     payments: {
         title: "Payments",
-        subtitle: "Manage gym payments"
+        subtitle: "Track revenue and membership payments"
     },
 
     workouts: {
         title: "Workout Plans",
-        subtitle: "Manage workout programs"
+        subtitle: "Manage training programs"
     },
 
     settings: {
         title: "Settings",
-        subtitle: "Manage system preferences"
+        subtitle: "Manage your gym system preferences"
     }
 
 };
 
 
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
 function showPage(pageName) {
 
-    /* Remove active navigation */
-
-    navItems.forEach((item) => {
-
-        item.classList.remove("active");
-
-        if (
-            item.dataset.page === pageName
-        ) {
-            item.classList.add("active");
-        }
-
-    });
-
-
-    /* Hide all pages */
-
-    pages.forEach((page) => {
+    pages.forEach(page => {
 
         page.classList.remove(
             "active-page"
@@ -88,12 +146,11 @@ function showPage(pageName) {
     });
 
 
-    /* Show selected page */
-
     const selectedPage =
         document.getElementById(
             `${pageName}Page`
         );
+
 
     if (selectedPage) {
 
@@ -104,43 +161,48 @@ function showPage(pageName) {
     }
 
 
-    /* Change title */
+    navItems.forEach(item => {
 
-    if (pageData[pageName]) {
+        item.classList.toggle(
+            "active",
+            item.dataset.page === pageName
+        );
+
+    });
+
+
+    if (pageInfo[pageName]) {
 
         pageTitle.textContent =
-            pageData[pageName].title;
+            pageInfo[pageName].title;
 
         pageSubtitle.textContent =
-            pageData[pageName].subtitle;
+            pageInfo[pageName].subtitle;
 
     }
 
 
-    /* Scroll to top */
+    sidebar.classList.remove("mobile-open");
 
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
-
 }
 
 
-/* Navigation click */
-
-navItems.forEach((item) => {
+navItems.forEach(item => {
 
     item.addEventListener(
         "click",
-        function(event) {
+        event => {
 
             event.preventDefault();
 
-            const page =
-                this.dataset.page;
+            const pageName =
+                item.dataset.page;
 
-            showPage(page);
+            showPage(pageName);
 
         }
     );
@@ -148,13 +210,13 @@ navItems.forEach((item) => {
 });
 
 
-/* Dashboard buttons */
+/* =========================================================
+   DASHBOARD VIEW BUTTONS
+========================================================= */
 
 document
-    .querySelectorAll(
-        "[data-page-button]"
-    )
-    .forEach((button) => {
+    .querySelectorAll("[data-page-button]")
+    .forEach(button => {
 
         button.addEventListener(
             "click",
@@ -170,38 +232,37 @@ document
     });
 
 
-/* =========================================
-   DARK / LIGHT MODE
-========================================= */
+/* =========================================================
+   MOBILE SIDEBAR
+========================================================= */
 
-const themeToggle =
-    document.getElementById(
-        "themeToggle"
-    );
+mobileMenu.addEventListener(
+    "click",
+    () => {
 
-const settingsTheme =
-    document.getElementById(
-        "settingsTheme"
-    );
+        sidebar.classList.toggle(
+            "mobile-open"
+        );
 
+    }
+);
+
+
+/* =========================================================
+   THEME
+========================================================= */
 
 function updateThemeIcon() {
 
     const isDark =
-        document.body.classList.contains(
-            "dark"
-        );
+        document.body.classList.contains("dark");
 
-    const icon =
+
+    themeToggle.textContent =
         isDark ? "☀️" : "🌙";
 
-    if (themeToggle) {
-        themeToggle.textContent = icon;
-    }
-
-    if (settingsTheme) {
-        settingsTheme.textContent = icon;
-    }
+    settingsTheme.textContent =
+        isDark ? "☀️" : "🌙";
 
 }
 
@@ -212,51 +273,43 @@ function toggleTheme() {
         "dark"
     );
 
+
     const isDark =
         document.body.classList.contains(
             "dark"
         );
+
 
     localStorage.setItem(
         "monsterGymTheme",
         isDark ? "dark" : "light"
     );
 
+
     updateThemeIcon();
 
 }
 
 
-/* Main theme button */
-
-if (themeToggle) {
-
-    themeToggle.addEventListener(
-        "click",
-        toggleTheme
-    );
-
-}
+themeToggle.addEventListener(
+    "click",
+    toggleTheme
+);
 
 
-/* Settings theme button */
-
-if (settingsTheme) {
-
-    settingsTheme.addEventListener(
-        "click",
-        toggleTheme
-    );
-
-}
+settingsTheme.addEventListener(
+    "click",
+    toggleTheme
+);
 
 
-/* Load saved theme */
+/* LOAD THEME */
 
 const savedTheme =
     localStorage.getItem(
         "monsterGymTheme"
     );
+
 
 if (savedTheme === "dark") {
 
@@ -266,44 +319,66 @@ if (savedTheme === "dark") {
 
 }
 
+
 updateThemeIcon();
 
 
-/* =========================================
-   ADD MEMBER MODAL
-========================================= */
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
 
-const addMemberBtn =
-    document.getElementById(
-        "addMemberBtn"
-    );
+notificationBtn.addEventListener(
+    "click",
+    event => {
 
-const membersAddBtn =
-    document.getElementById(
-        "membersAddBtn"
-    );
+        event.stopPropagation();
 
-const memberModal =
-    document.getElementById(
-        "memberModal"
-    );
+        notificationPanel.classList.toggle(
+            "show"
+        );
 
-const closeModal =
-    document.getElementById(
-        "closeModal"
-    );
-
-const memberForm =
-    document.getElementById(
-        "memberForm"
-    );
+    }
+);
 
 
-function openMemberModal() {
+document.addEventListener(
+    "click",
+    event => {
+
+        if (!notificationPanel.contains(event.target) &&
+            !notificationBtn.contains(event.target)
+        ) {
+
+            notificationPanel.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+function openModal() {
 
     memberModal.classList.add(
         "show"
     );
+
+    document.body.style.overflow =
+        "hidden";
+
+    setTimeout(() => {
+
+        document
+            .getElementById("memberName")
+            ?.focus();
+
+    }, 100);
 
 }
 
@@ -314,44 +389,33 @@ function closeMemberModal() {
         "show"
     );
 
-}
-
-
-if (addMemberBtn) {
-
-    addMemberBtn.addEventListener(
-        "click",
-        openMemberModal
-    );
+    document.body.style.overflow =
+        "";
 
 }
 
 
-if (membersAddBtn) {
-
-    membersAddBtn.addEventListener(
-        "click",
-        openMemberModal
-    );
-
-}
+addMemberBtn.addEventListener(
+    "click",
+    openModal
+);
 
 
-if (closeModal) {
-
-    closeModal.addEventListener(
-        "click",
-        closeMemberModal
-    );
-
-}
+membersAddBtn.addEventListener(
+    "click",
+    openModal
+);
 
 
-/* Click outside modal */
+closeModal.addEventListener(
+    "click",
+    closeMemberModal
+);
+
 
 memberModal.addEventListener(
     "click",
-    (event) => {
+    event => {
 
         if (
             event.target === memberModal
@@ -365,215 +429,425 @@ memberModal.addEventListener(
 );
 
 
-/* =========================================
-   ADD MEMBER
-========================================= */
+document.addEventListener(
+    "keydown",
+    event => {
 
-memberForm.addEventListener(
-    "submit",
-    (event) => {
-
-        event.preventDefault();
-
-
-        const name =
-            document.getElementById(
-                "memberName"
-            ).value.trim();
-
-
-        const phone =
-            document.getElementById(
-                "memberPhone"
-            ).value.trim();
-
-
-        const plan =
-            document.getElementById(
-                "memberPlan"
-            ).value;
-
-
-        if (!name ||
-            !phone ||
-            !plan
+        if (
+            event.key === "Escape" &&
+            memberModal.classList.contains("show")
         ) {
 
-            return;
+            closeMemberModal();
 
         }
-
-
-        const initials =
-            name
-            .split(" ")
-            .map(
-                word =>
-                word[0]
-            )
-            .join("")
-            .substring(0, 2)
-            .toUpperCase();
-
-
-        const today =
-            new Date();
-
-
-        const joinDate =
-            today.toLocaleDateString(
-                "en-IN", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric"
-                }
-            );
-
-
-        const table =
-            document.getElementById(
-                "membersTable"
-            );
-
-
-        const row =
-            document.createElement(
-                "tr"
-            );
-
-
-        row.innerHTML = `
-
-            <td>
-
-                <div class="table-member">
-
-                    <div class="member-avatar">
-                        ${initials}
-                    </div>
-
-                    <strong>
-                        ${name}
-                    </strong>
-
-                </div>
-
-            </td>
-
-            <td>
-                ${plan}
-            </td>
-
-            <td>
-                ${joinDate}
-            </td>
-
-            <td>
-                —
-            </td>
-
-            <td>
-
-                <span class="badge active-badge">
-                    Active
-                </span>
-
-            </td>
-
-        `;
-
-
-        table.prepend(row);
-
-
-        /* Update dashboard member count */
-
-        const totalMembers =
-            document.getElementById(
-                "totalMembers"
-            );
-
-
-        if (totalMembers) {
-
-            const current =
-                parseInt(
-                    totalMembers.textContent
-                ) || 0;
-
-            totalMembers.textContent =
-                current + 1;
-
-        }
-
-
-        /* Reset */
-
-        memberForm.reset();
-
-        closeMemberModal();
-
-
-        /* Show success message */
-
-        alert(
-            `${name} has been added to Monster Gym!`
-        );
-
-
-        /* Open Members page */
-
-        showPage("members");
 
     }
 );
 
 
-/* =========================================
-   MOBILE MENU
-========================================= */
+/* =========================================================
+   MEMBERS
+========================================================= */
 
-const mobileMenu =
-    document.getElementById(
-        "mobileMenu"
-    );
+let members =
+    JSON.parse(
+        localStorage.getItem(
+            "monsterGymMembers"
+        )
+    ) || [];
 
 
-if (mobileMenu) {
+function getInitials(name) {
 
-    mobileMenu.addEventListener(
-        "click",
-        () => {
+    return name
+        .trim()
+        .split(" ")
+        .slice(0, 2)
+        .map(word => word[0])
+        .join("")
+        .toUpperCase();
 
-            document
-                .querySelector(".sidebar")
-                .classList.toggle(
-                    "mobile-open"
-                );
+}
 
+
+function getCurrentDate() {
+
+    const date =
+        new Date();
+
+    return date.toLocaleDateString(
+        "en-IN", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
         }
     );
 
 }
 
 
-/* =========================================
-   CLOSE MOBILE SIDEBAR
-========================================= */
+function addMemberToDashboard(member) {
 
-navItems.forEach((item) => {
+    const row =
+        document.createElement("tr");
 
-    item.addEventListener(
-        "click",
-        () => {
 
+    row.innerHTML = `
+
+        <td>
+
+            <div class="table-member">
+
+                <div class="member-avatar">
+                    ${member.initials}
+                </div>
+
+                <strong>
+                    ${member.name}
+                </strong>
+
+            </div>
+
+        </td>
+
+        <td>
+            ${member.plan}
+        </td>
+
+        <td>
+            ${member.joinDate}
+        </td>
+
+        <td>
+            —
+        </td>
+
+        <td>
+
+            <span class="badge active-badge">
+                Active
+            </span>
+
+        </td>
+    `;
+
+
+    membersTable.prepend(row);
+
+}
+
+
+function addMemberToAllMembers(member) {
+
+    const row =
+        document.createElement("tr");
+
+
+    row.dataset.name =
+        member.name.toLowerCase();
+
+    row.dataset.plan =
+        member.plan;
+
+
+    row.innerHTML = `
+
+        <td>
+            ${member.name}
+        </td>
+
+        <td>
+            ${member.phone}
+        </td>
+
+        <td>
+            ${member.plan}
+        </td>
+
+        <td>
+            ${member.joinDate}
+        </td>
+
+        <td>
+
+            <span class="badge active-badge">
+                Active
+            </span>
+
+        </td>
+
+    `;
+
+
+    allMembersTable.prepend(row);
+
+}
+
+
+function updateMemberCount() {
+
+    const defaultMembers = 248;
+
+    totalMembers.textContent =
+        defaultMembers + members.length;
+
+}
+
+
+memberForm.addEventListener(
+    "submit",
+    event => {
+
+        event.preventDefault();
+
+
+        const name =
             document
-                .querySelector(".sidebar")
-                .classList.remove(
-                    "mobile-open"
-                );
+            .getElementById("memberName")
+            .value
+            .trim();
 
-        }
+
+        const phone =
+            document
+            .getElementById("memberPhone")
+            .value
+            .trim();
+
+
+        const plan =
+            document
+            .getElementById("memberPlan")
+            .value;
+
+
+        const member = {
+
+            id: Date.now(),
+
+            name,
+
+            phone,
+
+            plan,
+
+            initials: getInitials(name),
+
+            joinDate: getCurrentDate()
+
+        };
+
+
+        members.push(
+            member
+        );
+
+
+        localStorage.setItem(
+            "monsterGymMembers",
+            JSON.stringify(members)
+        );
+
+
+        addMemberToDashboard(
+            member
+        );
+
+
+        addMemberToAllMembers(
+            member
+        );
+
+
+        updateMemberCount();
+
+
+        memberForm.reset();
+
+        closeMemberModal();
+
+
+        showToast(
+            `${name} was added successfully.`
+        );
+
+    }
+);
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function filterMembers() {
+
+    const searchValue =
+        memberSearch.value
+        .toLowerCase()
+        .trim();
+
+
+    const selectedPlan =
+        membershipFilter.value;
+
+
+    const rows =
+        allMembersTable.querySelectorAll(
+            "tr"
+        );
+
+
+    rows.forEach(row => {
+
+        const rowText =
+            row.textContent.toLowerCase();
+
+
+        const plan =
+            row.dataset.plan ||
+            rowText;
+
+
+        const matchesSearch =
+            rowText.includes(
+                searchValue
+            );
+
+
+        const matchesPlan =
+            selectedPlan === "all" ||
+            plan.includes(selectedPlan);
+
+
+        row.style.display =
+            matchesSearch &&
+            matchesPlan ?
+            "" :
+            "none";
+
+    });
+
+}
+
+
+memberSearch.addEventListener(
+    "input",
+    filterMembers
+);
+
+
+membershipFilter.addEventListener(
+    "change",
+    filterMembers
+);
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+
+function showToast(message) {
+
+    toastMessage.textContent =
+        message;
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    clearTimeout(
+        toastTimer
+    );
+
+
+    toastTimer =
+        setTimeout(() => {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        }, 3000);
+
+}
+
+
+/* =========================================================
+   LIVE DATE
+========================================================= */
+
+function updateDate() {
+
+    const now =
+        new Date();
+
+
+    const date =
+        now.toLocaleDateString(
+            "en-IN", {
+                weekday: "short",
+                day: "numeric",
+                month: "short"
+            }
+        );
+
+
+    const time =
+        now.toLocaleTimeString(
+            "en-IN", {
+                hour: "2-digit",
+                minute: "2-digit"
+            }
+        );
+
+
+    liveDate.innerHTML = `
+        <span>📅</span>
+        <span>${date} · ${time}</span>
+    `;
+
+}
+
+
+updateDate();
+
+
+setInterval(
+    updateDate,
+    30000
+);
+
+
+/* =========================================================
+   LOAD STORED MEMBERS
+========================================================= */
+
+members.forEach(member => {
+
+    addMemberToDashboard(
+        member
+    );
+
+    addMemberToAllMembers(
+        member
     );
 
 });
+
+
+updateMemberCount();
+
+
+/* =========================================================
+   INITIAL PAGE
+========================================================= */
+
+showPage(
+    "dashboard"
+);

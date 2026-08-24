@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Monster Gym Management System - Manage members, trainers, memberships, attendance and payments.">
+
     <title>Monster Gym — Management System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="index.css">
 </head>
@@ -14,18 +21,25 @@
 
     <div class="app">
 
-        <!-- ================= SIDEBAR ================= -->
+        <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
 
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
 
             <div class="brand">
-                <div class="brand-icon">💪</div>
+
+                <div class="brand-icon">
+                    💪
+                </div>
 
                 <div class="brand-text">
                     <h2>Monster Gym</h2>
                     <span>Management System</span>
                 </div>
+
             </div>
+
 
             <nav class="sidebar-menu">
 
@@ -71,6 +85,7 @@
 
             </nav>
 
+
             <div class="sidebar-footer">
 
                 <div class="sidebar-status">
@@ -85,7 +100,9 @@
         </aside>
 
 
-        <!-- ================= MAIN ================= -->
+        <!-- =====================================================
+         MAIN
+    ====================================================== -->
 
         <main class="main">
 
@@ -94,32 +111,86 @@
             <header class="topbar">
 
                 <div class="page-heading">
-                    <div class="mobile-menu" id="mobileMenu">
-                        ☰
-                    </div>
+
+                    <button class="mobile-menu" id="mobileMenu">
+                    ☰
+                </button>
 
                     <div>
                         <h1 id="pageTitle">Dashboard</h1>
+
                         <p id="pageSubtitle">
                             Welcome back, Admin 👋
                         </p>
                     </div>
+
                 </div>
+
 
                 <div class="top-actions">
 
+                    <!-- DATE -->
+
+                    <div class="live-date" id="liveDate">
+                        <span>📅</span>
+                        <span>Loading...</span>
+                    </div>
+
+
                     <!-- THEME -->
 
-                    <button class="theme-btn" id="themeToggle" title="Toggle theme">
+                    <button class="icon-btn theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
                     🌙
                 </button>
 
+
                     <!-- NOTIFICATION -->
 
-                    <button class="notification-btn">
-                    🔔
-                    <span class="notification-dot"></span>
-                </button>
+                    <div class="notification-wrapper">
+
+                        <button class="icon-btn notification-btn" id="notificationBtn" aria-label="Notifications">
+                        🔔
+                        <span class="notification-dot"></span>
+                    </button>
+
+                        <div class="notification-panel" id="notificationPanel">
+
+                            <div class="notification-header">
+                                <strong>Notifications</strong>
+                                <span>3 new</span>
+                            </div>
+
+                            <div class="notification-item">
+                                <span class="notification-icon purple-bg">💰</span>
+
+                                <div>
+                                    <strong>Payment received</strong>
+                                    <small>Rahul Kumar paid ₹8,500</small>
+                                </div>
+                            </div>
+
+                            <div class="notification-item">
+                                <span class="notification-icon green-bg">👤</span>
+
+                                <div>
+                                    <strong>New member</strong>
+                                    <small>Arjun Kumar joined the gym</small>
+                                </div>
+                            </div>
+
+                            <div class="notification-item">
+                                <span class="notification-icon orange-bg">⚠️</span>
+
+                                <div>
+                                    <strong>Membership expiring</strong>
+                                    <small>3 memberships expire soon</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
 
                     <!-- PROFILE -->
 
@@ -134,6 +205,8 @@
                             <small>Gym Manager</small>
                         </div>
 
+                        <span class="profile-arrow">⌄</span>
+
                     </div>
 
                 </div>
@@ -141,84 +214,141 @@
             </header>
 
 
-            <!-- ================================================= -->
-            <!-- DASHBOARD PAGE -->
-            <!-- ================================================= -->
+            <!-- =====================================================
+             DASHBOARD
+        ====================================================== -->
 
             <section class="page active-page" id="dashboardPage">
+
+
+                <!-- WELCOME -->
+
+                <div class="welcome-banner">
+
+                    <div>
+
+                        <span class="eyebrow">
+                        MONSTER GYM
+                    </span>
+
+                        <h2>
+                            Build stronger.
+                            <span>Manage smarter.</span>
+                        </h2>
+
+                        <p>
+                            Everything you need to manage your gym, members and daily operations in one place.
+                        </p>
+
+                    </div>
+
+                    <div class="welcome-graphic">
+                        🏋️
+                    </div>
+
+                </div>
+
 
                 <!-- STATS -->
 
                 <section class="stats">
 
-                    <div class="stat-card purple-card">
+                    <div class="stat-card">
 
                         <div class="stat-icon purple">
                             👥
                         </div>
 
-                        <div>
+                        <div class="stat-content">
+
                             <p>Total Members</p>
-                            <h2 id="totalMembers">248</h2>
+
+                            <h2 id="totalMembers">
+                                248
+                            </h2>
 
                             <small class="positive">
                             ↑ 12 this month
                         </small>
+
                         </div>
+
+                        <span class="stat-decoration"></span>
 
                     </div>
 
 
-                    <div class="stat-card orange-card">
+                    <div class="stat-card">
 
                         <div class="stat-icon orange">
                             🏋️
                         </div>
 
-                        <div>
+                        <div class="stat-content">
+
                             <p>Active Trainers</p>
-                            <h2>18</h2>
+
+                            <h2>
+                                18
+                            </h2>
 
                             <small class="positive">
                             ↑ 3 new trainers
                         </small>
+
                         </div>
+
+                        <span class="stat-decoration"></span>
 
                     </div>
 
 
-                    <div class="stat-card green-card">
+                    <div class="stat-card">
 
                         <div class="stat-icon green">
                             💰
                         </div>
 
-                        <div>
+                        <div class="stat-content">
+
                             <p>Monthly Revenue</p>
-                            <h2>₹2.84L</h2>
+
+                            <h2>
+                                ₹2.84L
+                            </h2>
 
                             <small class="positive">
                             ↑ 18.5%
                         </small>
+
                         </div>
+
+                        <span class="stat-decoration"></span>
 
                     </div>
 
 
-                    <div class="stat-card blue-card">
+                    <div class="stat-card">
 
                         <div class="stat-icon blue">
                             📅
                         </div>
 
-                        <div>
+                        <div class="stat-content">
+
                             <p>Today's Attendance</p>
-                            <h2>186</h2>
+
+                            <h2>
+                                186
+                            </h2>
 
                             <small class="positive">
                             92% attendance
                         </small>
+
                         </div>
+
+                        <span class="stat-decoration"></span>
 
                     </div>
 
@@ -229,6 +359,7 @@
 
                 <section class="content-grid">
 
+
                     <!-- ATTENDANCE -->
 
                     <div class="panel">
@@ -236,12 +367,21 @@
                         <div class="panel-header">
 
                             <div>
-                                <h3>Today's Attendance</h3>
-                                <p>Latest member check-ins</p>
+                                <div class="section-label">
+                                    ACTIVITY
+                                </div>
+
+                                <h3>
+                                    Today's Attendance
+                                </h3>
+
+                                <p>
+                                    Latest member check-ins
+                                </p>
                             </div>
 
                             <button class="view-btn" data-page-button="attendance">
-                            View All
+                            View All →
                         </button>
 
                         </div>
@@ -257,7 +397,7 @@
 
                                 <div class="member-info">
                                     <strong>Rahul Kumar</strong>
-                                    <small>Annual Pro</small>
+                                    <small>Annual Pro · 08:32 AM</small>
                                 </div>
 
                                 <span class="status">
@@ -275,7 +415,7 @@
 
                                 <div class="member-info">
                                     <strong>Priya Sharma</strong>
-                                    <small>Quarterly</small>
+                                    <small>Quarterly · 09:15 AM</small>
                                 </div>
 
                                 <span class="status">
@@ -293,7 +433,7 @@
 
                                 <div class="member-info">
                                     <strong>Amit Roy</strong>
-                                    <small>Half-Yearly</small>
+                                    <small>Half-Yearly · 10:05 AM</small>
                                 </div>
 
                                 <span class="status">
@@ -311,7 +451,7 @@
 
                                 <div class="member-info">
                                     <strong>Sneha Mukherjee</strong>
-                                    <small>Monthly</small>
+                                    <small>Monthly · 10:28 AM</small>
                                 </div>
 
                                 <span class="status">
@@ -332,12 +472,23 @@
                         <div class="panel-header">
 
                             <div>
-                                <h3>Membership Overview</h3>
-                                <p>Current subscriptions</p>
+
+                                <div class="section-label">
+                                    MEMBERSHIPS
+                                </div>
+
+                                <h3>
+                                    Membership Overview
+                                </h3>
+
+                                <p>
+                                    Current subscriptions
+                                </p>
+
                             </div>
 
                             <button class="view-btn" data-page-button="memberships">
-                            Details
+                            Details →
                         </button>
 
                         </div>
@@ -376,7 +527,7 @@
 
 
                             <div class="membership-row">
-                                <span>Annual</span>
+                                <span>Annual Pro</span>
                                 <strong>56</strong>
                             </div>
 
@@ -391,6 +542,70 @@
                 </section>
 
 
+                <!-- REVENUE PANEL -->
+
+                <section class="panel revenue-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <div class="section-label">
+                                PERFORMANCE
+                            </div>
+
+                            <h3>
+                                Revenue Overview
+                            </h3>
+
+                            <p>
+                                Monthly revenue performance
+                            </p>
+
+                        </div>
+
+                        <div class="revenue-total">
+                            <strong>₹2.84L</strong>
+                            <span>+18.5%</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="fake-chart">
+
+                        <div class="chart-grid"></div>
+
+                        <div class="chart-bars">
+
+                            <span style="height:42%"></span>
+                            <span style="height:56%"></span>
+                            <span style="height:48%"></span>
+                            <span style="height:68%"></span>
+                            <span style="height:61%"></span>
+                            <span style="height:76%"></span>
+                            <span style="height:88%"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart-labels">
+
+                        <span>Feb</span>
+                        <span>Mar</span>
+                        <span>Apr</span>
+                        <span>May</span>
+                        <span>Jun</span>
+                        <span>Jul</span>
+                        <span>Aug</span>
+
+                    </div>
+
+                </section>
+
+
                 <!-- RECENT MEMBERS -->
 
                 <section class="panel members-panel">
@@ -398,8 +613,19 @@
                     <div class="panel-header">
 
                         <div>
-                            <h3>Recent Members</h3>
-                            <p>Recently registered gym members</p>
+
+                            <div class="section-label">
+                                MEMBERS
+                            </div>
+
+                            <h3>
+                                Recent Members
+                            </h3>
+
+                            <p>
+                                Recently registered gym members
+                            </p>
+
                         </div>
 
                         <button class="add-btn" id="addMemberBtn">
@@ -430,6 +656,7 @@
                                 <tr>
 
                                     <td>
+
                                         <div class="table-member">
 
                                             <div class="member-avatar">
@@ -441,6 +668,7 @@
                                         </strong>
 
                                         </div>
+
                                     </td>
 
                                     <td>Annual Pro</td>
@@ -459,6 +687,7 @@
                                 <tr>
 
                                     <td>
+
                                         <div class="table-member">
 
                                             <div class="member-avatar">
@@ -470,6 +699,7 @@
                                         </strong>
 
                                         </div>
+
                                     </td>
 
                                     <td>Quarterly</td>
@@ -488,6 +718,7 @@
                                 <tr>
 
                                     <td>
+
                                         <div class="table-member">
 
                                             <div class="member-avatar">
@@ -499,6 +730,7 @@
                                         </strong>
 
                                         </div>
+
                                     </td>
 
                                     <td>Monthly</td>
@@ -524,9 +756,9 @@
             </section>
 
 
-            <!-- ================================================= -->
-            <!-- MEMBERS PAGE -->
-            <!-- ================================================= -->
+            <!-- =====================================================
+             MEMBERS PAGE
+        ====================================================== -->
 
             <section class="page" id="membersPage">
 
@@ -535,6 +767,7 @@
                     <div class="page-card-header">
 
                         <div>
+                            <div class="section-label">MANAGEMENT</div>
                             <h2>Members</h2>
                             <p>Manage all registered gym members</p>
                         </div>
@@ -548,14 +781,37 @@
 
                     <div class="search-row">
 
-                        <input type="text" id="memberSearch" placeholder="🔍 Search members...">
+                        <div class="search-box">
 
-                        <select>
-                        <option>All Memberships</option>
-                        <option>Monthly</option>
-                        <option>Quarterly</option>
-                        <option>Half-Yearly</option>
-                        <option>Annual Pro</option>
+                            <span>🔍</span>
+
+                            <input type="text" id="memberSearch" placeholder="Search members...">
+
+                        </div>
+
+
+                        <select id="membershipFilter">
+
+                        <option value="all">
+                            All Memberships
+                        </option>
+
+                        <option value="Monthly">
+                            Monthly
+                        </option>
+
+                        <option value="Quarterly">
+                            Quarterly
+                        </option>
+
+                        <option value="Half-Yearly">
+                            Half-Yearly
+                        </option>
+
+                        <option value="Annual Pro">
+                            Annual Pro
+                        </option>
+
                     </select>
 
                     </div>
@@ -577,7 +833,7 @@
 
                             </thead>
 
-                            <tbody>
+                            <tbody id="allMembersTable">
 
                                 <tr>
                                     <td>Rahul Kumar</td>
@@ -626,9 +882,9 @@
             </section>
 
 
-            <!-- ================================================= -->
-            <!-- TRAINERS PAGE -->
-            <!-- ================================================= -->
+            <!-- =====================================================
+             TRAINERS
+        ====================================================== -->
 
             <section class="page" id="trainersPage">
 
@@ -637,6 +893,7 @@
                     <div class="page-card-header">
 
                         <div>
+                            <div class="section-label">TEAM</div>
                             <h2>Trainers</h2>
                             <p>Manage your gym trainers</p>
                         </div>
@@ -651,31 +908,78 @@
                     <div class="trainer-grid">
 
                         <div class="trainer-card">
-                            <div class="trainer-avatar">RS</div>
+
+                            <div class="trainer-avatar">
+                                RS
+                            </div>
+
                             <h3>Rahul Singh</h3>
-                            <p>Strength Trainer</p>
-                            <span class="badge active-badge">Active</span>
+
+                            <p>
+                                Strength Trainer
+                            </p>
+
+                            <span class="badge active-badge">
+                            Active
+                        </span>
+
                         </div>
 
+
                         <div class="trainer-card">
-                            <div class="trainer-avatar">AK</div>
+
+                            <div class="trainer-avatar">
+                                AK
+                            </div>
+
                             <h3>Ankit Kumar</h3>
-                            <p>Fitness Coach</p>
-                            <span class="badge active-badge">Active</span>
+
+                            <p>
+                                Fitness Coach
+                            </p>
+
+                            <span class="badge active-badge">
+                            Active
+                        </span>
+
                         </div>
 
+
                         <div class="trainer-card">
-                            <div class="trainer-avatar">PM</div>
+
+                            <div class="trainer-avatar">
+                                PM
+                            </div>
+
                             <h3>Priya Mehta</h3>
-                            <p>Yoga Instructor</p>
-                            <span class="badge active-badge">Active</span>
+
+                            <p>
+                                Yoga Instructor
+                            </p>
+
+                            <span class="badge active-badge">
+                            Active
+                        </span>
+
                         </div>
 
+
                         <div class="trainer-card">
-                            <div class="trainer-avatar">SV</div>
+
+                            <div class="trainer-avatar">
+                                SV
+                            </div>
+
                             <h3>Sourav Verma</h3>
-                            <p>Cardio Trainer</p>
-                            <span class="badge active-badge">Active</span>
+
+                            <p>
+                                Cardio Trainer
+                            </p>
+
+                            <span class="badge active-badge">
+                            Active
+                        </span>
+
                         </div>
 
                     </div>
@@ -685,9 +989,9 @@
             </section>
 
 
-            <!-- ================================================= -->
-            <!-- MEMBERSHIP PAGE -->
-            <!-- ================================================= -->
+            <!-- =====================================================
+             MEMBERSHIPS
+        ====================================================== -->
 
             <section class="page" id="membershipsPage">
 
@@ -696,6 +1000,7 @@
                     <div class="page-card-header">
 
                         <div>
+                            <div class="section-label">PLANS</div>
                             <h2>Memberships</h2>
                             <p>Manage gym membership plans</p>
                         </div>
@@ -710,31 +1015,62 @@
                     <div class="plan-grid">
 
                         <div class="plan-card purple-plan">
+
                             <span>MONTHLY</span>
+
                             <h2>₹1,000</h2>
+
                             <p>1 Month Access</p>
-                            <button>View Plan</button>
+
+                            <button>
+                            View Plan →
+                        </button>
+
                         </div>
+
 
                         <div class="plan-card blue-plan">
+
                             <span>QUARTERLY</span>
+
                             <h2>₹2,700</h2>
+
                             <p>3 Month Access</p>
-                            <button>View Plan</button>
+
+                            <button>
+                            View Plan →
+                        </button>
+
                         </div>
+
 
                         <div class="plan-card green-plan">
+
                             <span>HALF-YEARLY</span>
+
                             <h2>₹5,000</h2>
+
                             <p>6 Month Access</p>
-                            <button>View Plan</button>
+
+                            <button>
+                            View Plan →
+                        </button>
+
                         </div>
 
+
                         <div class="plan-card orange-plan">
+
                             <span>ANNUAL PRO</span>
+
                             <h2>₹8,500</h2>
+
                             <p>12 Month Access</p>
-                            <button>View Plan</button>
+
+                            <button>
+                            View Plan →
+                        </button>
+
                         </div>
 
                     </div>
@@ -744,9 +1080,9 @@
             </section>
 
 
-            <!-- ================================================= -->
-            <!-- ATTENDANCE PAGE -->
-            <!-- ================================================= -->
+            <!-- =====================================================
+             ATTENDANCE
+        ====================================================== -->
 
             <section class="page" id="attendancePage">
 
@@ -755,6 +1091,7 @@
                     <div class="page-card-header">
 
                         <div>
+                            <div class="section-label">DAILY ACTIVITY</div>
                             <h2>Attendance</h2>
                             <p>Today's member attendance</p>
                         </div>
@@ -771,16 +1108,19 @@
                         <div>
                             <span>Present</span>
                             <strong>186</strong>
+                            <small class="positive">+8 today</small>
                         </div>
 
                         <div>
                             <span>Absent</span>
                             <strong>62</strong>
+                            <small>25% of members</small>
                         </div>
 
                         <div>
                             <span>Attendance</span>
                             <strong>92%</strong>
+                            <small class="positive">+4.2%</small>
                         </div>
 
                     </div>
@@ -796,8 +1136,11 @@
                                 <small>Checked in at 08:32 AM</small>
                             </div>
 
-                            <span class="status">Present</span>
+                            <span class="status">
+                            Present
+                        </span>
                         </div>
+
 
                         <div class="attendance-item">
                             <div class="member-avatar">PS</div>
@@ -807,8 +1150,11 @@
                                 <small>Checked in at 09:15 AM</small>
                             </div>
 
-                            <span class="status">Present</span>
+                            <span class="status">
+                            Present
+                        </span>
                         </div>
+
 
                         <div class="attendance-item">
                             <div class="member-avatar">AR</div>
@@ -818,7 +1164,9 @@
                                 <small>Checked in at 10:05 AM</small>
                             </div>
 
-                            <span class="status">Present</span>
+                            <span class="status">
+                            Present
+                        </span>
                         </div>
 
                     </div>
@@ -828,9 +1176,9 @@
             </section>
 
 
-            <!-- ================================================= -->
-            <!-- PAYMENTS PAGE -->
-            <!-- ================================================= -->
+            <!-- =====================================================
+             PAYMENTS
+        ====================================================== -->
 
             <section class="page" id="paymentsPage">
 
@@ -839,6 +1187,7 @@
                     <div class="page-card-header">
 
                         <div>
+                            <div class="section-label">FINANCE</div>
                             <h2>Payments</h2>
                             <p>Track membership payments</p>
                         </div>
@@ -875,6 +1224,7 @@
                         <table>
 
                             <thead>
+
                                 <tr>
                                     <th>Member</th>
                                     <th>Plan</th>
@@ -882,6 +1232,7 @@
                                     <th>Date</th>
                                     <th>Status</th>
                                 </tr>
+
                             </thead>
 
                             <tbody>
@@ -921,9 +1272,9 @@
             </section>
 
 
-            <!-- ================================================= -->
-            <!-- WORKOUT PAGE -->
-            <!-- ================================================= -->
+            <!-- =====================================================
+             WORKOUTS
+        ====================================================== -->
 
             <section class="page" id="workoutsPage">
 
@@ -932,6 +1283,7 @@
                     <div class="page-card-header">
 
                         <div>
+                            <div class="section-label">PROGRAMS</div>
                             <h2>Workout Plans</h2>
                             <p>Create and manage workout programs</p>
                         </div>
@@ -980,9 +1332,9 @@
             </section>
 
 
-            <!-- ================================================= -->
-            <!-- SETTINGS PAGE -->
-            <!-- ================================================= -->
+            <!-- =====================================================
+             SETTINGS
+        ====================================================== -->
 
             <section class="page" id="settingsPage">
 
@@ -991,6 +1343,7 @@
                     <div class="page-card-header">
 
                         <div>
+                            <div class="section-label">SYSTEM</div>
                             <h2>Settings</h2>
                             <p>Manage your gym system preferences</p>
                         </div>
@@ -1032,8 +1385,14 @@
                             </div>
 
                             <label class="switch">
-                            <input type="checkbox" checked>
+
+                            <input
+                                type="checkbox"
+                                checked
+                            >
+
                             <span></span>
+
                         </label>
 
                         </div>
@@ -1046,7 +1405,7 @@
                                 <p>Switch between light and dark interface</p>
                             </div>
 
-                            <button class="theme-btn large-theme" id="settingsTheme">
+                            <button class="icon-btn large-theme" id="settingsTheme">
                             🌙
                         </button>
 
@@ -1063,7 +1422,9 @@
     </div>
 
 
-    <!-- ================= ADD MEMBER MODAL ================= -->
+    <!-- =====================================================
+     ADD MEMBER MODAL
+====================================================== -->
 
     <div class="modal" id="memberModal">
 
@@ -1073,40 +1434,92 @@
             ×
         </button>
 
+
             <div class="modal-icon">
                 👤
             </div>
 
-            <h2>Add New Member</h2>
+
+            <div class="section-label">
+                MEMBER REGISTRATION
+            </div>
+
+            <h2>
+                Add New Member
+            </h2>
 
             <p>
                 Register a new Monster Gym member.
             </p>
 
+
             <form id="memberForm">
 
-                <input type="text" id="memberName" placeholder="Member name" required>
+                <label>
+                Full Name
+            </label>
 
-                <input type="tel" id="memberPhone" placeholder="Phone number" required>
+                <input type="text" id="memberName" placeholder="Enter member name" required>
+
+
+                <label>
+                Phone Number
+            </label>
+
+                <input type="tel" id="memberPhone" placeholder="Enter phone number" required>
+
+
+                <label>
+                Membership Plan
+            </label>
 
                 <select id="memberPlan" required>
+
                 <option value="">
                     Select membership
                 </option>
 
-                <option>Monthly</option>
-                <option>Quarterly</option>
-                <option>Half-Yearly</option>
-                <option>Annual Pro</option>
+                <option>
+                    Monthly
+                </option>
+
+                <option>
+                    Quarterly
+                </option>
+
+                <option>
+                    Half-Yearly
+                </option>
+
+                <option>
+                    Annual Pro
+                </option>
 
             </select>
 
+
                 <button type="submit" class="submit-btn">
-                Add Member
+                Add Member →
             </button>
 
             </form>
 
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div class="toast" id="toast">
+
+        <span>✓</span>
+
+        <div>
+            <strong>Success</strong>
+            <small id="toastMessage">
+            Member added successfully.
+        </small>
         </div>
 
     </div>
