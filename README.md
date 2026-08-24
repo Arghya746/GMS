@@ -2,6 +2,5 @@
 
 A Pen created on CodePen.
 
-Original URL: [https://codepen.io/1058-IT-ARGHYA-SINGHA/pen/YPZzxav](https://codepen.io/1058-IT-ARGHYA-SINGHA/pen/YPZzxav).
 
 A modern responsive gym management dashboard UI for Monster Gym, built with HTML, CSS, and JavaScript. The design includes member management, trainers, memberships, attendance, payments, workout plans, revenue tracking, membership status, and dashboard analytics. The interface is designed for desktop, tablet, Android, and iOS/iPhone screens.
