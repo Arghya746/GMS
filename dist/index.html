@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Monster Gym Management System — Dashboard UI</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="app">
+  <aside class="sidebar">
+    <div class="logo">
+      💪 <span>Monster</span> Gym
+    </div>
+
+    <nav>
+      <a href="#" class="active">🏠 Dashboard</a>
+      <a href="#">👥 Members</a>
+      <a href="#">🏋️ Trainers</a>
+      <a href="#">🎫 Memberships</a>
+      <a href="#">📅 Attendance</a>
+      <a href="#">💰 Payments</a>
+      <a href="#">🏃 Workout Plans</a>
+      <a href="#">⚙️ Settings</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <strong>Monster Gym</strong>
+      <span>Management System</span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1>Dashboard</h1>
+        <p>Welcome back, Admin 👋</p>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">A</div>
+        <div>
+          <strong>Admin</strong>
+          <small>Gym Manager</small>
+        </div>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="stat-card">
+        <span class="icon">👥</span>
+        <div>
+          <p>Total Members</p>
+          <h2>248</h2>
+          <small>+12 this month</small>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <span class="icon">🏋️</span>
+        <div>
+          <p>Active Trainers</p>
+          <h2>18</h2>
+          <small>3 new trainers</small>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <span class="icon">💰</span>
+        <div>
+          <p>Monthly Revenue</p>
+          <h2>₹2.84L</h2>
+          <small>+8.4% this month</small>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <span class="icon">📅</span>
+        <div>
+          <p>Today's Attendance</p>
+          <h2>186</h2>
+          <small>75% members</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <div class="card chart-card">
+        <div class="card-header">
+          <div>
+            <h3>Member Growth</h3>
+            <p>Membership growth over the last 6 months</p>
+          </div>
+
+          <select>
+            <option>Last 6 Months</option>
+            <option>This Year</option>
+          </select>
+        </div>
+
+        <div class="chart">
+          <div class="bar" style="height:45%"></div>
+          <div class="bar" style="height:58%"></div>
+          <div class="bar" style="height:52%"></div>
+          <div class="bar" style="height:70%"></div>
+          <div class="bar" style="height:82%"></div>
+          <div class="bar active-bar" style="height:95%"></div>
+        </div>
+
+        <div class="months">
+          <span>Mar</span>
+          <span>Apr</span>
+          <span>May</span>
+          <span>Jun</span>
+          <span>Jul</span>
+          <span>Aug</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3>Membership Status</h3>
+            <p>Current membership overview</p>
+          </div>
+        </div>
+
+        <div class="membership">
+          <div class="circle">
+            <strong>248</strong>
+            <span>Members</span>
+          </div>
+
+          <div class="legend">
+            <div><span class="dot green"></span> Active <b>186</b></div>
+            <div><span class="dot orange"></span> Expiring <b>34</b></div>
+            <div><span class="dot red"></span> Expired <b>28</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card table-card">
+      <div class="card-header">
+        <div>
+          <h3>Recent Members</h3>
+          <p>Latest gym registrations</p>
+        </div>
+
+        <button>View All</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Member</th>
+            <th>Plan</th>
+            <th>Join Date</th>
+            <th>Status</th>
+            <th>Payment</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Rahul Sharma</td>
+            <td>Premium</td>
+            <td>18 Aug 2026</td>
+            <td><span class="status active">Active</span></td>
+            <td>₹4,999</td>
+          </tr>
+
+          <tr>
+            <td>Priya Singh</td>
+            <td>Gold</td>
+            <td>16 Aug 2026</td>
+            <td><span class="status active">Active</span></td>
+            <td>₹3,499</td>
+          </tr>
+
+          <tr>
+            <td>Amit Das</td>
+            <td>Basic</td>
+            <td>14 Aug 2026</td>
+            <td><span class="status expiring">Expiring</span></td>
+            <td>₹1,999</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
