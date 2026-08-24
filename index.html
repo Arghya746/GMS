@@ -14,13 +14,14 @@
 
     <div class="app">
 
-        <!-- SIDEBAR -->
+        <!-- ================= SIDEBAR ================= -->
+
         <aside class="sidebar">
 
             <div class="brand">
                 <div class="brand-icon">💪</div>
 
-                <div>
+                <div class="brand-text">
                     <h2>Monster Gym</h2>
                     <span>Management System</span>
                 </div>
@@ -28,66 +29,111 @@
 
             <nav class="sidebar-menu">
 
-                <a href="#" class="nav-item active">
-                    🏠 <span>Dashboard</span>
+                <a href="#" class="nav-item active" data-page="dashboard">
+                    <span class="nav-icon">🏠</span>
+                    <span>Dashboard</span>
                 </a>
 
-                <a href="#" class="nav-item">
-                    👥 <span>Members</span>
+                <a href="#" class="nav-item" data-page="members">
+                    <span class="nav-icon">👥</span>
+                    <span>Members</span>
                 </a>
 
-                <a href="#" class="nav-item">
-                    🏋️ <span>Trainers</span>
+                <a href="#" class="nav-item" data-page="trainers">
+                    <span class="nav-icon">🏋️</span>
+                    <span>Trainers</span>
                 </a>
 
-                <a href="#" class="nav-item">
-                    🎫 <span>Memberships</span>
+                <a href="#" class="nav-item" data-page="memberships">
+                    <span class="nav-icon">🎫</span>
+                    <span>Memberships</span>
                 </a>
 
-                <a href="#" class="nav-item">
-                    📅 <span>Attendance</span>
+                <a href="#" class="nav-item" data-page="attendance">
+                    <span class="nav-icon">📅</span>
+                    <span>Attendance</span>
                 </a>
 
-                <a href="#" class="nav-item">
-                    💰 <span>Payments</span>
+                <a href="#" class="nav-item" data-page="payments">
+                    <span class="nav-icon">💰</span>
+                    <span>Payments</span>
                 </a>
 
-                <a href="#" class="nav-item">
-                    🏃 <span>Workout Plans</span>
+                <a href="#" class="nav-item" data-page="workouts">
+                    <span class="nav-icon">🏃</span>
+                    <span>Workout Plans</span>
                 </a>
 
-                <a href="#" class="nav-item">
-                    ⚙️ <span>Settings</span>
+                <a href="#" class="nav-item" data-page="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
                 </a>
 
             </nav>
 
             <div class="sidebar-footer">
+
+                <div class="sidebar-status">
+                    <span class="online-dot"></span> System Online
+                </div>
+
                 <strong>Monster Gym</strong>
                 <small>Management System</small>
+
             </div>
 
         </aside>
 
 
-        <!-- MAIN CONTENT -->
+        <!-- ================= MAIN ================= -->
+
         <main class="main">
 
             <!-- TOPBAR -->
+
             <header class="topbar">
 
-                <div>
-                    <h1>Dashboard</h1>
-                    <p>Welcome back, Admin 👋</p>
-                </div>
-
-                <div class="profile">
-
-                    <div class="avatar">A</div>
+                <div class="page-heading">
+                    <div class="mobile-menu" id="mobileMenu">
+                        ☰
+                    </div>
 
                     <div>
-                        <strong>Admin</strong>
-                        <small>Gym Manager</small>
+                        <h1 id="pageTitle">Dashboard</h1>
+                        <p id="pageSubtitle">
+                            Welcome back, Admin 👋
+                        </p>
+                    </div>
+                </div>
+
+                <div class="top-actions">
+
+                    <!-- THEME -->
+
+                    <button class="theme-btn" id="themeToggle" title="Toggle theme">
+                    🌙
+                </button>
+
+                    <!-- NOTIFICATION -->
+
+                    <button class="notification-btn">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+                    <!-- PROFILE -->
+
+                    <div class="profile">
+
+                        <div class="avatar">
+                            A
+                        </div>
+
+                        <div class="profile-info">
+                            <strong>Admin</strong>
+                            <small>Gym Manager</small>
+                        </div>
+
                     </div>
 
                 </div>
@@ -95,176 +141,684 @@
             </header>
 
 
-            <!-- STAT CARDS -->
-            <section class="stats">
+            <!-- ================================================= -->
+            <!-- DASHBOARD PAGE -->
+            <!-- ================================================= -->
 
-                <div class="stat-card">
-                    <div class="icon purple">👥</div>
+            <section class="page active-page" id="dashboardPage">
 
-                    <div>
-                        <p>Total Members</p>
-                        <h2>248</h2>
-                        <small>+12 this month</small>
+                <!-- STATS -->
+
+                <section class="stats">
+
+                    <div class="stat-card purple-card">
+
+                        <div class="stat-icon purple">
+                            👥
+                        </div>
+
+                        <div>
+                            <p>Total Members</p>
+                            <h2 id="totalMembers">248</h2>
+
+                            <small class="positive">
+                            ↑ 12 this month
+                        </small>
+                        </div>
+
                     </div>
-                </div>
 
 
-                <div class="stat-card">
-                    <div class="icon orange">🏋️</div>
+                    <div class="stat-card orange-card">
 
-                    <div>
-                        <p>Active Trainers</p>
-                        <h2>18</h2>
-                        <small>3 new trainers</small>
+                        <div class="stat-icon orange">
+                            🏋️
+                        </div>
+
+                        <div>
+                            <p>Active Trainers</p>
+                            <h2>18</h2>
+
+                            <small class="positive">
+                            ↑ 3 new trainers
+                        </small>
+                        </div>
+
                     </div>
-                </div>
 
 
-                <div class="stat-card">
-                    <div class="icon green">💰</div>
+                    <div class="stat-card green-card">
 
-                    <div>
-                        <p>Monthly Revenue</p>
-                        <h2>₹2.84L</h2>
-                        <small>+18.5% this month</small>
+                        <div class="stat-icon green">
+                            💰
+                        </div>
+
+                        <div>
+                            <p>Monthly Revenue</p>
+                            <h2>₹2.84L</h2>
+
+                            <small class="positive">
+                            ↑ 18.5%
+                        </small>
+                        </div>
+
                     </div>
-                </div>
 
 
-                <div class="stat-card">
-                    <div class="icon blue">📅</div>
+                    <div class="stat-card blue-card">
 
-                    <div>
-                        <p>Today's Attendance</p>
-                        <h2>186</h2>
-                        <small>92% attendance</small>
+                        <div class="stat-icon blue">
+                            📅
+                        </div>
+
+                        <div>
+                            <p>Today's Attendance</p>
+                            <h2>186</h2>
+
+                            <small class="positive">
+                            92% attendance
+                        </small>
+                        </div>
+
                     </div>
+
+                </section>
+
+
+                <!-- DASHBOARD GRID -->
+
+                <section class="content-grid">
+
+                    <!-- ATTENDANCE -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Today's Attendance</h3>
+                                <p>Latest member check-ins</p>
+                            </div>
+
+                            <button class="view-btn" data-page-button="attendance">
+                            View All
+                        </button>
+
+                        </div>
+
+
+                        <div class="attendance">
+
+                            <div class="attendance-item">
+
+                                <div class="member-avatar">
+                                    RK
+                                </div>
+
+                                <div class="member-info">
+                                    <strong>Rahul Kumar</strong>
+                                    <small>Annual Pro</small>
+                                </div>
+
+                                <span class="status">
+                                Checked In
+                            </span>
+
+                            </div>
+
+
+                            <div class="attendance-item">
+
+                                <div class="member-avatar">
+                                    PS
+                                </div>
+
+                                <div class="member-info">
+                                    <strong>Priya Sharma</strong>
+                                    <small>Quarterly</small>
+                                </div>
+
+                                <span class="status">
+                                Checked In
+                            </span>
+
+                            </div>
+
+
+                            <div class="attendance-item">
+
+                                <div class="member-avatar">
+                                    AR
+                                </div>
+
+                                <div class="member-info">
+                                    <strong>Amit Roy</strong>
+                                    <small>Half-Yearly</small>
+                                </div>
+
+                                <span class="status">
+                                Checked In
+                            </span>
+
+                            </div>
+
+
+                            <div class="attendance-item">
+
+                                <div class="member-avatar">
+                                    SM
+                                </div>
+
+                                <div class="member-info">
+                                    <strong>Sneha Mukherjee</strong>
+                                    <small>Monthly</small>
+                                </div>
+
+                                <span class="status">
+                                Checked In
+                            </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MEMBERSHIP -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Membership Overview</h3>
+                                <p>Current subscriptions</p>
+                            </div>
+
+                            <button class="view-btn" data-page-button="memberships">
+                            Details
+                        </button>
+
+                        </div>
+
+
+                        <div class="membership">
+
+                            <div class="membership-row">
+                                <span>Monthly</span>
+                                <strong>64</strong>
+                            </div>
+
+                            <div class="progress">
+                                <span style="width:45%"></span>
+                            </div>
+
+
+                            <div class="membership-row">
+                                <span>Quarterly</span>
+                                <strong>82</strong>
+                            </div>
+
+                            <div class="progress">
+                                <span style="width:62%"></span>
+                            </div>
+
+
+                            <div class="membership-row">
+                                <span>Half-Yearly</span>
+                                <strong>46</strong>
+                            </div>
+
+                            <div class="progress">
+                                <span style="width:35%"></span>
+                            </div>
+
+
+                            <div class="membership-row">
+                                <span>Annual</span>
+                                <strong>56</strong>
+                            </div>
+
+                            <div class="progress">
+                                <span style="width:48%"></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- RECENT MEMBERS -->
+
+                <section class="panel members-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Recent Members</h3>
+                            <p>Recently registered gym members</p>
+                        </div>
+
+                        <button class="add-btn" id="addMemberBtn">
+                        + Add Member
+                    </button>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Member</th>
+                                    <th>Membership</th>
+                                    <th>Join Date</th>
+                                    <th>Expiry</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="membersTable">
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-member">
+
+                                            <div class="member-avatar">
+                                                AK
+                                            </div>
+
+                                            <strong>
+                                            Arjun Kumar
+                                        </strong>
+
+                                        </div>
+                                    </td>
+
+                                    <td>Annual Pro</td>
+                                    <td>20 Aug 2026</td>
+                                    <td>20 Aug 2027</td>
+
+                                    <td>
+                                        <span class="badge active-badge">
+                                        Active
+                                    </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-member">
+
+                                            <div class="member-avatar">
+                                                RS
+                                            </div>
+
+                                            <strong>
+                                            Riya Sen
+                                        </strong>
+
+                                        </div>
+                                    </td>
+
+                                    <td>Quarterly</td>
+                                    <td>18 Aug 2026</td>
+                                    <td>18 Nov 2026</td>
+
+                                    <td>
+                                        <span class="badge active-badge">
+                                        Active
+                                    </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-member">
+
+                                            <div class="member-avatar">
+                                                VK
+                                            </div>
+
+                                            <strong>
+                                            Vikash Kumar
+                                        </strong>
+
+                                        </div>
+                                    </td>
+
+                                    <td>Monthly</td>
+                                    <td>17 Aug 2026</td>
+                                    <td>17 Sep 2026</td>
+
+                                    <td>
+                                        <span class="badge warning-badge">
+                                        Expiring
+                                    </span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- MEMBERS PAGE -->
+            <!-- ================================================= -->
+
+            <section class="page" id="membersPage">
+
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Members</h2>
+                            <p>Manage all registered gym members</p>
+                        </div>
+
+                        <button class="add-btn" id="membersAddBtn">
+                        + Add Member
+                    </button>
+
+                    </div>
+
+
+                    <div class="search-row">
+
+                        <input type="text" id="memberSearch" placeholder="🔍 Search members...">
+
+                        <select>
+                        <option>All Memberships</option>
+                        <option>Monthly</option>
+                        <option>Quarterly</option>
+                        <option>Half-Yearly</option>
+                        <option>Annual Pro</option>
+                    </select>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Member</th>
+                                    <th>Phone</th>
+                                    <th>Membership</th>
+                                    <th>Join Date</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Rahul Kumar</td>
+                                    <td>9876543210</td>
+                                    <td>Annual Pro</td>
+                                    <td>12 Aug 2026</td>
+                                    <td>
+                                        <span class="badge active-badge">
+                                        Active
+                                    </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Priya Sharma</td>
+                                    <td>9876501234</td>
+                                    <td>Quarterly</td>
+                                    <td>10 Aug 2026</td>
+                                    <td>
+                                        <span class="badge active-badge">
+                                        Active
+                                    </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Amit Roy</td>
+                                    <td>9832112345</td>
+                                    <td>Half-Yearly</td>
+                                    <td>8 Aug 2026</td>
+                                    <td>
+                                        <span class="badge active-badge">
+                                        Active
+                                    </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
                 </div>
 
             </section>
 
 
-            <!-- CONTENT GRID -->
-            <section class="content-grid">
+            <!-- ================================================= -->
+            <!-- TRAINERS PAGE -->
+            <!-- ================================================= -->
 
-                <!-- ATTENDANCE -->
-                <div class="panel">
+            <section class="page" id="trainersPage">
 
-                    <div class="panel-header">
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
                         <div>
-                            <h3>Today's Attendance</h3>
-                            <p>Member check-ins</p>
+                            <h2>Trainers</h2>
+                            <p>Manage your gym trainers</p>
                         </div>
 
-                        <button class="view-btn">View All</button>
+                        <button class="add-btn">
+                        + Add Trainer
+                    </button>
+
                     </div>
 
-                    <div class="attendance">
+
+                    <div class="trainer-grid">
+
+                        <div class="trainer-card">
+                            <div class="trainer-avatar">RS</div>
+                            <h3>Rahul Singh</h3>
+                            <p>Strength Trainer</p>
+                            <span class="badge active-badge">Active</span>
+                        </div>
+
+                        <div class="trainer-card">
+                            <div class="trainer-avatar">AK</div>
+                            <h3>Ankit Kumar</h3>
+                            <p>Fitness Coach</p>
+                            <span class="badge active-badge">Active</span>
+                        </div>
+
+                        <div class="trainer-card">
+                            <div class="trainer-avatar">PM</div>
+                            <h3>Priya Mehta</h3>
+                            <p>Yoga Instructor</p>
+                            <span class="badge active-badge">Active</span>
+                        </div>
+
+                        <div class="trainer-card">
+                            <div class="trainer-avatar">SV</div>
+                            <h3>Sourav Verma</h3>
+                            <p>Cardio Trainer</p>
+                            <span class="badge active-badge">Active</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- MEMBERSHIP PAGE -->
+            <!-- ================================================= -->
+
+            <section class="page" id="membershipsPage">
+
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Memberships</h2>
+                            <p>Manage gym membership plans</p>
+                        </div>
+
+                        <button class="add-btn">
+                        + Add Plan
+                    </button>
+
+                    </div>
+
+
+                    <div class="plan-grid">
+
+                        <div class="plan-card purple-plan">
+                            <span>MONTHLY</span>
+                            <h2>₹1,000</h2>
+                            <p>1 Month Access</p>
+                            <button>View Plan</button>
+                        </div>
+
+                        <div class="plan-card blue-plan">
+                            <span>QUARTERLY</span>
+                            <h2>₹2,700</h2>
+                            <p>3 Month Access</p>
+                            <button>View Plan</button>
+                        </div>
+
+                        <div class="plan-card green-plan">
+                            <span>HALF-YEARLY</span>
+                            <h2>₹5,000</h2>
+                            <p>6 Month Access</p>
+                            <button>View Plan</button>
+                        </div>
+
+                        <div class="plan-card orange-plan">
+                            <span>ANNUAL PRO</span>
+                            <h2>₹8,500</h2>
+                            <p>12 Month Access</p>
+                            <button>View Plan</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- ATTENDANCE PAGE -->
+            <!-- ================================================= -->
+
+            <section class="page" id="attendancePage">
+
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Attendance</h2>
+                            <p>Today's member attendance</p>
+                        </div>
+
+                        <button class="add-btn">
+                        + Check In
+                    </button>
+
+                    </div>
+
+
+                    <div class="attendance-stats">
+
+                        <div>
+                            <span>Present</span>
+                            <strong>186</strong>
+                        </div>
+
+                        <div>
+                            <span>Absent</span>
+                            <strong>62</strong>
+                        </div>
+
+                        <div>
+                            <span>Attendance</span>
+                            <strong>92%</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="attendance-large">
 
                         <div class="attendance-item">
                             <div class="member-avatar">RK</div>
 
                             <div class="member-info">
                                 <strong>Rahul Kumar</strong>
-                                <small>Annual Pro</small>
+                                <small>Checked in at 08:32 AM</small>
                             </div>
 
-                            <span class="status">Checked In</span>
+                            <span class="status">Present</span>
                         </div>
-
 
                         <div class="attendance-item">
                             <div class="member-avatar">PS</div>
 
                             <div class="member-info">
                                 <strong>Priya Sharma</strong>
-                                <small>Quarterly</small>
+                                <small>Checked in at 09:15 AM</small>
                             </div>
 
-                            <span class="status">Checked In</span>
+                            <span class="status">Present</span>
                         </div>
-
 
                         <div class="attendance-item">
                             <div class="member-avatar">AR</div>
 
                             <div class="member-info">
                                 <strong>Amit Roy</strong>
-                                <small>Half-Yearly</small>
+                                <small>Checked in at 10:05 AM</small>
                             </div>
 
-                            <span class="status">Checked In</span>
-                        </div>
-
-
-                        <div class="attendance-item">
-                            <div class="member-avatar">SM</div>
-
-                            <div class="member-info">
-                                <strong>Sneha Mukherjee</strong>
-                                <small>Monthly</small>
-                            </div>
-
-                            <span class="status">Checked In</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- MEMBERSHIP -->
-                <div class="panel">
-
-                    <div class="panel-header">
-                        <div>
-                            <h3>Membership Overview</h3>
-                            <p>Current subscriptions</p>
-                        </div>
-
-                        <button class="view-btn">Details</button>
-                    </div>
-
-
-                    <div class="membership">
-
-                        <div class="membership-row">
-                            <span>Monthly</span>
-                            <strong>64</strong>
-                        </div>
-
-                        <div class="progress">
-                            <span style="width: 45%;"></span>
-                        </div>
-
-
-                        <div class="membership-row">
-                            <span>Quarterly</span>
-                            <strong>82</strong>
-                        </div>
-
-                        <div class="progress">
-                            <span style="width: 62%;"></span>
-                        </div>
-
-
-                        <div class="membership-row">
-                            <span>Half-Yearly</span>
-                            <strong>46</strong>
-                        </div>
-
-                        <div class="progress">
-                            <span style="width: 35%;"></span>
-                        </div>
-
-
-                        <div class="membership-row">
-                            <span>Annual</span>
-                            <strong>56</strong>
-                        </div>
-
-                        <div class="progress">
-                            <span style="width: 48%;"></span>
+                            <span class="status">Present</span>
                         </div>
 
                     </div>
@@ -274,101 +828,231 @@
             </section>
 
 
-            <!-- RECENT MEMBERS -->
-            <section class="panel members-panel">
+            <!-- ================================================= -->
+            <!-- PAYMENTS PAGE -->
+            <!-- ================================================= -->
 
-                <div class="panel-header">
+            <section class="page" id="paymentsPage">
 
-                    <div>
-                        <h3>Recent Members</h3>
-                        <p>Recently registered gym members</p>
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Payments</h2>
+                            <p>Track membership payments</p>
+                        </div>
+
+                        <button class="add-btn">
+                        + Record Payment
+                    </button>
+
                     </div>
 
-                    <button class="add-btn" id="addMemberBtn">
-                        + Add Member
-                    </button>
+
+                    <div class="payment-summary">
+
+                        <div>
+                            <span>Total Revenue</span>
+                            <strong>₹2.84L</strong>
+                        </div>
+
+                        <div>
+                            <span>This Month</span>
+                            <strong>₹82,500</strong>
+                        </div>
+
+                        <div>
+                            <span>Pending</span>
+                            <strong>₹12,400</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Member</th>
+                                    <th>Plan</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Rahul Kumar</td>
+                                    <td>Annual Pro</td>
+                                    <td>₹8,500</td>
+                                    <td>20 Aug 2026</td>
+                                    <td>
+                                        <span class="badge active-badge">
+                                        Paid
+                                    </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Priya Sharma</td>
+                                    <td>Quarterly</td>
+                                    <td>₹2,700</td>
+                                    <td>18 Aug 2026</td>
+                                    <td>
+                                        <span class="badge active-badge">
+                                        Paid
+                                    </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
 
                 </div>
 
-
-                <div class="table-container">
-
-                    <table>
-
-                        <thead>
-                            <tr>
-                                <th>Member</th>
-                                <th>Membership</th>
-                                <th>Join Date</th>
-                                <th>Expiry</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            <tr>
-                                <td>
-                                    <div class="table-member">
-                                        <div class="member-avatar">AK</div>
-                                        <strong>Arjun Kumar</strong>
-                                    </div>
-                                </td>
-
-                                <td>Annual Pro</td>
-                                <td>20 Aug 2026</td>
-                                <td>20 Aug 2027</td>
-
-                                <td>
-                                    <span class="badge active-badge">
-                                        Active
-                                    </span>
-                                </td>
-                            </tr>
+            </section>
 
 
-                            <tr>
-                                <td>
-                                    <div class="table-member">
-                                        <div class="member-avatar">RS</div>
-                                        <strong>Riya Sen</strong>
-                                    </div>
-                                </td>
+            <!-- ================================================= -->
+            <!-- WORKOUT PAGE -->
+            <!-- ================================================= -->
 
-                                <td>Quarterly</td>
-                                <td>18 Aug 2026</td>
-                                <td>18 Nov 2026</td>
+            <section class="page" id="workoutsPage">
 
-                                <td>
-                                    <span class="badge active-badge">
-                                        Active
-                                    </span>
-                                </td>
-                            </tr>
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Workout Plans</h2>
+                            <p>Create and manage workout programs</p>
+                        </div>
+
+                        <button class="add-btn">
+                        + Create Plan
+                    </button>
+
+                    </div>
 
 
-                            <tr>
-                                <td>
-                                    <div class="table-member">
-                                        <div class="member-avatar">VK</div>
-                                        <strong>Vikash Kumar</strong>
-                                    </div>
-                                </td>
+                    <div class="workout-grid">
 
-                                <td>Monthly</td>
-                                <td>17 Aug 2026</td>
-                                <td>17 Sep 2026</td>
+                        <div class="workout-card">
+                            <div class="workout-icon">💪</div>
+                            <h3>Muscle Building</h3>
+                            <p>5 Days / Week</p>
+                            <span>24 Members</span>
+                        </div>
 
-                                <td>
-                                    <span class="badge warning-badge">
-                                        Expiring
-                                    </span>
-                                </td>
-                            </tr>
+                        <div class="workout-card">
+                            <div class="workout-icon">🔥</div>
+                            <h3>Fat Loss</h3>
+                            <p>6 Days / Week</p>
+                            <span>31 Members</span>
+                        </div>
 
-                        </tbody>
+                        <div class="workout-card">
+                            <div class="workout-icon">🏃</div>
+                            <h3>Cardio</h3>
+                            <p>4 Days / Week</p>
+                            <span>18 Members</span>
+                        </div>
 
-                    </table>
+                        <div class="workout-card">
+                            <div class="workout-icon">🧘</div>
+                            <h3>Flexibility</h3>
+                            <p>3 Days / Week</p>
+                            <span>12 Members</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- SETTINGS PAGE -->
+            <!-- ================================================= -->
+
+            <section class="page" id="settingsPage">
+
+                <div class="page-card">
+
+                    <div class="page-card-header">
+
+                        <div>
+                            <h2>Settings</h2>
+                            <p>Manage your gym system preferences</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-list">
+
+                        <div class="setting-item">
+
+                            <div>
+                                <strong>Gym Name</strong>
+                                <p>Display name of your gym</p>
+                            </div>
+
+                            <input type="text" value="Monster Gym">
+
+                        </div>
+
+
+                        <div class="setting-item">
+
+                            <div>
+                                <strong>Admin Name</strong>
+                                <p>Gym manager account</p>
+                            </div>
+
+                            <input type="text" value="Admin">
+
+                        </div>
+
+
+                        <div class="setting-item">
+
+                            <div>
+                                <strong>Email Notifications</strong>
+                                <p>Receive payment and membership alerts</p>
+                            </div>
+
+                            <label class="switch">
+                            <input type="checkbox" checked>
+                            <span></span>
+                        </label>
+
+                        </div>
+
+
+                        <div class="setting-item">
+
+                            <div>
+                                <strong>Dark Mode</strong>
+                                <p>Switch between light and dark interface</p>
+                            </div>
+
+                            <button class="theme-btn large-theme" id="settingsTheme">
+                            🌙
+                        </button>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -379,33 +1063,47 @@
     </div>
 
 
-    <!-- ADD MEMBER MODAL -->
+    <!-- ================= ADD MEMBER MODAL ================= -->
+
     <div class="modal" id="memberModal">
 
         <div class="modal-box">
 
-            <button class="close-btn" id="closeModal">×</button>
+            <button class="close-btn" id="closeModal">
+            ×
+        </button>
+
+            <div class="modal-icon">
+                👤
+            </div>
 
             <h2>Add New Member</h2>
-            <p>Register a new Monster Gym member.</p>
+
+            <p>
+                Register a new Monster Gym member.
+            </p>
 
             <form id="memberForm">
 
                 <input type="text" id="memberName" placeholder="Member name" required>
 
-                <input type="tel" placeholder="Phone number" required>
+                <input type="tel" id="memberPhone" placeholder="Phone number" required>
 
-                <select required>
-                    <option value="">Select membership</option>
-                    <option>Monthly</option>
-                    <option>Quarterly</option>
-                    <option>Half-Yearly</option>
-                    <option>Annual Pro</option>
-                </select>
+                <select id="memberPlan" required>
+                <option value="">
+                    Select membership
+                </option>
+
+                <option>Monthly</option>
+                <option>Quarterly</option>
+                <option>Half-Yearly</option>
+                <option>Annual Pro</option>
+
+            </select>
 
                 <button type="submit" class="submit-btn">
-                    Add Member
-                </button>
+                Add Member
+            </button>
 
             </form>
 
