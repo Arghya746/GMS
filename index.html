@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Monster Gym — Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">💪</div>
+
+                <div>
+                    <h2>Monster Gym</h2>
+                    <span>Management System</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="nav-item active">
+                    🏠 <span>Dashboard</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    👥 <span>Members</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    🏋️ <span>Trainers</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    🎫 <span>Memberships</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    📅 <span>Attendance</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    💰 <span>Payments</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    🏃 <span>Workout Plans</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    ⚙️ <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <strong>Monster Gym</strong>
+                <small>Management System</small>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, Admin 👋</p>
+                </div>
+
+                <div class="profile">
+
+                    <div class="avatar">A</div>
+
+                    <div>
+                        <strong>Admin</strong>
+                        <small>Gym Manager</small>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- STAT CARDS -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <div class="icon purple">👥</div>
+
+                    <div>
+                        <p>Total Members</p>
+                        <h2>248</h2>
+                        <small>+12 this month</small>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="icon orange">🏋️</div>
+
+                    <div>
+                        <p>Active Trainers</p>
+                        <h2>18</h2>
+                        <small>3 new trainers</small>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="icon green">💰</div>
+
+                    <div>
+                        <p>Monthly Revenue</p>
+                        <h2>₹2.84L</h2>
+                        <small>+18.5% this month</small>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="icon blue">📅</div>
+
+                    <div>
+                        <p>Today's Attendance</p>
+                        <h2>186</h2>
+                        <small>92% attendance</small>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- CONTENT GRID -->
+            <section class="content-grid">
+
+                <!-- ATTENDANCE -->
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h3>Today's Attendance</h3>
+                            <p>Member check-ins</p>
+                        </div>
+
+                        <button class="view-btn">View All</button>
+                    </div>
+
+                    <div class="attendance">
+
+                        <div class="attendance-item">
+                            <div class="member-avatar">RK</div>
+
+                            <div class="member-info">
+                                <strong>Rahul Kumar</strong>
+                                <small>Annual Pro</small>
+                            </div>
+
+                            <span class="status">Checked In</span>
+                        </div>
+
+
+                        <div class="attendance-item">
+                            <div class="member-avatar">PS</div>
+
+                            <div class="member-info">
+                                <strong>Priya Sharma</strong>
+                                <small>Quarterly</small>
+                            </div>
+
+                            <span class="status">Checked In</span>
+                        </div>
+
+
+                        <div class="attendance-item">
+                            <div class="member-avatar">AR</div>
+
+                            <div class="member-info">
+                                <strong>Amit Roy</strong>
+                                <small>Half-Yearly</small>
+                            </div>
+
+                            <span class="status">Checked In</span>
+                        </div>
+
+
+                        <div class="attendance-item">
+                            <div class="member-avatar">SM</div>
+
+                            <div class="member-info">
+                                <strong>Sneha Mukherjee</strong>
+                                <small>Monthly</small>
+                            </div>
+
+                            <span class="status">Checked In</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMBERSHIP -->
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h3>Membership Overview</h3>
+                            <p>Current subscriptions</p>
+                        </div>
+
+                        <button class="view-btn">Details</button>
+                    </div>
+
+
+                    <div class="membership">
+
+                        <div class="membership-row">
+                            <span>Monthly</span>
+                            <strong>64</strong>
+                        </div>
+
+                        <div class="progress">
+                            <span style="width: 45%;"></span>
+                        </div>
+
+
+                        <div class="membership-row">
+                            <span>Quarterly</span>
+                            <strong>82</strong>
+                        </div>
+
+                        <div class="progress">
+                            <span style="width: 62%;"></span>
+                        </div>
+
+
+                        <div class="membership-row">
+                            <span>Half-Yearly</span>
+                            <strong>46</strong>
+                        </div>
+
+                        <div class="progress">
+                            <span style="width: 35%;"></span>
+                        </div>
+
+
+                        <div class="membership-row">
+                            <span>Annual</span>
+                            <strong>56</strong>
+                        </div>
+
+                        <div class="progress">
+                            <span style="width: 48%;"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECENT MEMBERS -->
+            <section class="panel members-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Recent Members</h3>
+                        <p>Recently registered gym members</p>
+                    </div>
+
+                    <button class="add-btn" id="addMemberBtn">
+                        + Add Member
+                    </button>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Member</th>
+                                <th>Membership</th>
+                                <th>Join Date</th>
+                                <th>Expiry</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <div class="table-member">
+                                        <div class="member-avatar">AK</div>
+                                        <strong>Arjun Kumar</strong>
+                                    </div>
+                                </td>
+
+                                <td>Annual Pro</td>
+                                <td>20 Aug 2026</td>
+                                <td>20 Aug 2027</td>
+
+                                <td>
+                                    <span class="badge active-badge">
+                                        Active
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <div class="table-member">
+                                        <div class="member-avatar">RS</div>
+                                        <strong>Riya Sen</strong>
+                                    </div>
+                                </td>
+
+                                <td>Quarterly</td>
+                                <td>18 Aug 2026</td>
+                                <td>18 Nov 2026</td>
+
+                                <td>
+                                    <span class="badge active-badge">
+                                        Active
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <div class="table-member">
+                                        <div class="member-avatar">VK</div>
+                                        <strong>Vikash Kumar</strong>
+                                    </div>
+                                </td>
+
+                                <td>Monthly</td>
+                                <td>17 Aug 2026</td>
+                                <td>17 Sep 2026</td>
+
+                                <td>
+                                    <span class="badge warning-badge">
+                                        Expiring
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ADD MEMBER MODAL -->
+    <div class="modal" id="memberModal">
+
+        <div class="modal-box">
+
+            <button class="close-btn" id="closeModal">×</button>
+
+            <h2>Add New Member</h2>
+            <p>Register a new Monster Gym member.</p>
+
+            <form id="memberForm">
+
+                <input type="text" id="memberName" placeholder="Member name" required>
+
+                <input type="tel" placeholder="Phone number" required>
+
+                <select required>
+                    <option value="">Select membership</option>
+                    <option>Monthly</option>
+                    <option>Quarterly</option>
+                    <option>Half-Yearly</option>
+                    <option>Annual Pro</option>
+                </select>
+
+                <button type="submit" class="submit-btn">
+                    Add Member
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
